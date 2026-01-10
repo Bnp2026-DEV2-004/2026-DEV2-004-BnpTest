@@ -1,0 +1,7 @@
+/composeApp/build/
+/.gradle/
+/domain/build/
+/data/build/
+/.idea/
+/designSystem/build/
+/build/
