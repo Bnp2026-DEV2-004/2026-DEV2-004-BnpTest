@@ -1,11 +1,17 @@
 package net.BnpTestApp
 
+import net.BnpTestApp.ui.mainScreen.MainScreenViewModel
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 import org.koin.dsl.module
 
 val koinCommon = module {
 
     //////////////////////////////////////////////////////////////////
     // view models
+    single {
+        MainScreenViewModel()
+    }
 
 
 
@@ -25,4 +31,8 @@ val koinCommon = module {
     // services
 
 
+}
+
+object KoinResolver : KoinComponent {
+    inline fun <reified T> resolve(): T = get()
 }
