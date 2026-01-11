@@ -10,5 +10,6 @@ interface GamesRepo {
     suspend fun publishUpdatedGame(updatedGame: TicTacToeGame)
 
     fun observeCurrentTicTacToeGame(): Flow<TicTacToeGame>
+    suspend fun resetCurrentGame()
 
 }

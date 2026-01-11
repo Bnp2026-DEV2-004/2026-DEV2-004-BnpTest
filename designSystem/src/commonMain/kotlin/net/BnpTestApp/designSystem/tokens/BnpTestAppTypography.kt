@@ -18,7 +18,7 @@ data class BnpTestAppTypography(
 
 val bnpTestAppTypography = BnpTestAppTypography(
     h1 = TextStyle(
-        fontSize = 36.sp,
+        fontSize = 48.sp,
         letterSpacing = 0.015.sp,
         lineHeight = 112.sp,
         fontWeight = FontWeight.Bold

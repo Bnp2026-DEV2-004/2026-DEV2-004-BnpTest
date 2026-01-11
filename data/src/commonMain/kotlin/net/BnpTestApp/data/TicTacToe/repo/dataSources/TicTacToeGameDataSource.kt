@@ -1,20 +1,26 @@
 package net.BnpTestApp.data.TicTacToe.repo.dataSources
 
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import net.BnpTestApp.domain.TicTacToe.entities.TicTacToeGame
 
 class TicTacToeGameDataSource {
 
-    private val mutableState = MutableStateFlow(TicTacToeGame())
+    private var ticTacToeGame = TicTacToeGame()
 
-    fun getTicTacToeGameStateFlow() = mutableState.asStateFlow()
+    private val mutableShareFlow = MutableSharedFlow<TicTacToeGame>(1)
+
+    init {
+        mutableShareFlow.tryEmit(ticTacToeGame)
+    }
+
+    fun getTicTacToeGameStateFlow() = mutableShareFlow
 
     suspend fun updateTicTacToeGame(ticTacToeGame: TicTacToeGame) {
-        mutableState.emit(ticTacToeGame)
+        this.ticTacToeGame = ticTacToeGame
+        mutableShareFlow.emit(this.ticTacToeGame)
     }
 
     suspend fun getCurrentTicTacToeGame(): TicTacToeGame {
-        return mutableState.value
+        return ticTacToeGame
     }
 }

@@ -4,9 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 data class BnpTestAppColors (
     val primary: Color,
-    val primaryVariant: Color,
     val secondary: Color,
-    val secondaryVariant: Color,
     val tertiary: Color,
     val background: Color,
     val surface: Color
@@ -14,11 +12,9 @@ data class BnpTestAppColors (
 
 
 val bnpTestAppColors = BnpTestAppColors(
-    primary = Color.DarkGray,
-    primaryVariant = Color(0xFF3700B3),
-    secondary = Color.LightGray,
-    secondaryVariant = Color(0xFF018786),
-    tertiary = Color.Blue,
+    primary = Color.Red,
+    secondary = Color.Blue,
+    tertiary = Color.Gray,
     background = Color.White,
-    surface = Color(0xFFE0E0E0)
+    surface = Color.LightGray
 )

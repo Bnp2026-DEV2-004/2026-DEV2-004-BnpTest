@@ -1,6 +1,6 @@
 package net.BnpTestApp.domain.TicTacToe.usecase
 
-class PlaceTicTacToeTokenAndCheckCurrentGameStatusUseCase(
+class PlaceTicTacToeTokenAndUpdateCurrentGameStatusUseCase(
     private val placeTicTacToeTokenUseCase: PlaceTicTacToeTokenUseCase,
     private val checkAndUpdateGameStatusUseCase: CheckAndUpdateGameStatusUseCase,
     private val getCurrentTicTacToeGameUseCase: GetCurrentTicTacToeGameUseCase,

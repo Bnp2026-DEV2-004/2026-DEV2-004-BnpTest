@@ -20,4 +20,8 @@ class GamesRepoImpl(
     override fun observeCurrentTicTacToeGame(): Flow<TicTacToeGame> {
         return ticTacToeGameDataSource.getTicTacToeGameStateFlow()
     }
+
+    override suspend fun resetCurrentGame() {
+        ticTacToeGameDataSource.updateTicTacToeGame(TicTacToeGame())
+    }
 }
